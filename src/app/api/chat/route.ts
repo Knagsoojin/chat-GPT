@@ -11,7 +11,7 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const {messages} = await req.json();
+  const {messages} = await req.json(); //body에 온 애들을 json으로 바꾼 것
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     stream: true,
